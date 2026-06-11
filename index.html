@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahadian Bevan Pramudito | Electronics Engineering Portfolio</title>
+  <meta name="description" content="Portfolio of Rahadian Bevan Pramudito - Electronics Engineering Student at SMK Taruna Bhakti. Arduino Developer and Industrial IoT Enthusiast." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo"><span class="logo-icon">⚡</span>RBP<span class="logo-dot">.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark / light mode">
+          <span class="icon-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span><span class="icon-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Hero ===== -->
+  <header class="hero" id="home">
+    <canvas id="circuitCanvas" aria-hidden="true"></canvas>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge"><span class="pulse-dot"></span>Open to internships &amp; collaborations</div>
+        <p class="hero-greeting mono">&lt;hello_world /&gt;</p>
+        <h1>Rahadian Bevan <span class="accent">Pramudito</span></h1>
+        <p class="hero-typing mono"><span id="typingText"></span><span class="cursor">|</span></p>
+        <p class="hero-summary">
+          I am an Electronics Engineering student at SMK Taruna Bhakti with a strong interest in
+          electronics, embedded systems, automation, Industrial IoT, and programming. I enjoy building
+          practical electronic systems, experimenting with hardware and software integration, and
+          continuously expanding my technical knowledge. My goal is to develop innovative solutions
+          through electronics, automation, and emerging technologies while gaining real-world
+          engineering experience.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="assets/cv.pdf" class="btn btn-outline" download>⬇ Download CV</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/RockiStriser" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <a href="https://wa.me/6288293092717" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+          <a href="mailto:bvnpramudito@gmail.com" aria-label="Email">Email</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="avatar-ring">
+          <img src="assets/profile.jpg" alt="Portrait of Rahadian Bevan Pramudito" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="avatar-fallback" style="display:none">RB</div>
+        </div>
+        <div class="chip-badge mono">NE555 • CD4017 • Arduino</div>
+      </div>
+    </div>
+    <a href="#stats" class="scroll-down" aria-label="Scroll down">▾</a>
+  </header>
+
+  <!-- ===== Tech Marquee ===== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track mono">
+      <span>Arduino</span><i>◆</i><span>NE555</span><i>◆</i><span>CD4017</span><i>◆</i><span>CD4033</span><i>◆</i><span>Industrial IoT</span><i>◆</i><span>Python</span><i>◆</i><span>Digital Logic</span><i>◆</i><span>Automation</span><i>◆</i><span>Smart Manufacturing</span><i>◆</i><span>Embedded Systems</span><i>◆</i><span>Arduino</span><i>◆</i><span>NE555</span><i>◆</i><span>CD4017</span><i>◆</i><span>CD4033</span><i>◆</i><span>Industrial IoT</span><i>◆</i><span>Python</span><i>◆</i><span>Digital Logic</span><i>◆</i><span>Automation</span><i>◆</i><span>Smart Manufacturing</span><i>◆</i><span>Embedded Systems</span><i>◆</i>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ===== Stats ===== -->
+    <section class="stats" id="stats">
+      <div class="container stats-grid reveal">
+        <div class="stat-card">
+          <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
+          <p>Electronics Projects Completed</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-count="1">0</span>
+          <p>Professional Certification Earned</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label mono">Arduino &amp; Python</span>
+          <p>Programming Skills</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <p class="section-tag mono reveal">// about_me</p>
+        <h2 class="section-title reveal">About <span class="accent">Me</span></h2>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I am passionate about electronics, digital systems, embedded technology, and industrial
+              automation. Through both school projects and self-learning, I have developed practical
+              experience in electronic circuit design, digital logic, Arduino programming, and
+              Industrial IoT concepts.
+            </p>
+            <p>
+              I enjoy transforming ideas into working prototypes and solving technical challenges
+              through hands-on experimentation and continuous learning.
+            </p>
+            <div class="objective-card">
+              <h3>🎯 Career Objective</h3>
+              <p>
+                To become a skilled Electronics and Embedded Systems Engineer capable of developing
+                innovative hardware and software solutions. I aim to continuously improve my technical
+                expertise in electronics, Industrial IoT, automation, and programming while gaining
+                practical experience through projects, internships, and lifelong learning.
+              </p>
+            </div>
+          </div>
+          <div class="interests reveal">
+            <h3>Interests</h3>
+            <div class="tag-cloud">
+              <span class="tag">Electronics Engineering</span>
+              <span class="tag">Embedded Systems</span>
+              <span class="tag">Arduino Development</span>
+              <span class="tag">Industrial IoT</span>
+              <span class="tag">Automation</span>
+              <span class="tag">Robotics</span>
+              <span class="tag">Python Programming</span>
+              <span class="tag">Technology Innovation</span>
+              <span class="tag">Hardware Prototyping</span>
+              <span class="tag">Smart Manufacturing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <section class="section section-alt" id="education">
+      <div class="container">
+        <p class="section-tag mono reveal">// education</p>
+        <h2 class="section-title reveal">Education <span class="accent">Timeline</span></h2>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <h3>SMK Taruna Bhakti</h3>
+              <p class="timeline-sub mono">Major: Electronics Engineering</p>
+              <p class="timeline-label">Relevant Areas of Study</p>
+              <ul class="two-col-list">
+                <li>Analog Electronics</li>
+                <li>Digital Electronics</li>
+                <li>Electronic Measurements</li>
+                <li>Circuit Design and Analysis</li>
+                <li>Industrial Electronics</li>
+                <li>Microcontrollers</li>
+                <li>Automation Fundamentals</li>
+                <li>Troubleshooting and Testing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Certifications ===== -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <p class="section-tag mono reveal">// certifications</p>
+        <h2 class="section-title reveal">Professional <span class="accent">Certification</span></h2>
+        <div class="cert-card reveal">
+          <div class="cert-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/><path d="M12 5.5v2.6l1.8 1" opacity="0.6"/></svg></div>
+          <div class="cert-body">
+            <h3>Industrial IoT and Control Systems in Manufacturing</h3>
+            <p class="cert-meta">
+              <span class="badge badge-blue">Cisco Networking Academy</span>
+              <span class="badge badge-cyan">SMK Taruna Bhakti</span>
+              <span class="badge badge-gray">Completed: February 21, 2025</span>
+            </p>
+            <div class="cert-columns">
+              <div>
+                <h4>Topics Covered</h4>
+                <ul>
+                  <li>Industrial Internet of Things (IIoT)</li>
+                  <li>Industrial Control Systems</li>
+                  <li>Smart Manufacturing</li>
+                  <li>Industrial Automation</li>
+                  <li>Manufacturing Technologies</li>
+                  <li>Sensor Integration</li>
+                  <li>Connected Devices</li>
+                  <li>Data Collection and Monitoring</li>
+                  <li>Industrial Networking Fundamentals</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Key Learning Outcomes</h4>
+                <ul>
+                  <li>Understanding Industrial IoT architecture</li>
+                  <li>Understanding industrial automation concepts</li>
+                  <li>Exploring smart manufacturing systems</li>
+                  <li>Learning how connected devices improve industrial efficiency</li>
+                  <li>Understanding industrial monitoring and control systems</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <p class="section-tag mono reveal">// featured_projects</p>
+        <h2 class="section-title reveal">Featured <span class="accent">Projects</span></h2>
+        <div class="projects-grid">
+
+          <article class="project-card reveal">
+            <div class="project-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="5" y="5" width="14" height="14" rx="2.5"/><rect x="9" y="9" width="6" height="6" rx="1.2"/><path class="icon-pins" d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
+            <div class="project-body">
+              <h3>Running LED Circuit Using NE555 and CD4017</h3>
+              <p>Designed and assembled a running LED system using an NE555 Timer IC and CD4017 Decade Counter IC.</p>
+              <div class="project-tags">
+                <span class="tag">NE555</span><span class="tag">CD4017</span>
+                <span class="tag">LEDs</span><span class="tag">Breadboard Prototyping</span>
+              </div>
+              <p class="project-skills mono">Pulse Generation · Timing Circuits · Digital Counting · Sequential Logic</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="7" width="20" height="10" rx="5"/><circle class="icon-knob" cx="16" cy="12" r="3"/></svg></div>
+            <div class="project-body">
+              <h3>Flip-Flop Circuit</h3>
+              <p>Built and tested a flip-flop circuit to understand memory and switching logic principles in digital electronics.</p>
+              <div class="project-tags">
+                <span class="tag">Digital Logic</span><span class="tag">Bistable Circuits</span>
+              </div>
+              <p class="project-skills mono">Digital Logic · Bistable Circuits · Signal Switching · Logic Analysis</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><path class="icon-segments" d="M9.5 7h5M9.5 12h5M9.5 17h5M9.5 7.5v9M14.5 7.5v9"/></svg></div>
+            <div class="project-body">
+              <h3>7-Segment Counter Using NE555 and CD4033</h3>
+              <p>Developed a digital counter displayed on a 7-segment display using an NE555 Timer IC and CD4033 Counter/Display Driver.</p>
+              <div class="project-tags">
+                <span class="tag">NE555</span><span class="tag">CD4033</span>
+                <span class="tag">7-Segment Display</span>
+              </div>
+              <p class="project-skills mono">Digital Counting · Display Interfacing · Clock Pulse Generation · Numerical Display Systems</p>
+            </div>
+          </article>
+
+        </div>
+        <p class="projects-more reveal">
+          More experiments and code on
+          <a href="https://github.com/RockiStriser" target="_blank" rel="noopener">github.com/RockiStriser →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <p class="section-tag mono reveal">// technical_skills</p>
+        <h2 class="section-title reveal">Technical <span class="accent">Skills</span></h2>
+        <div class="skills-grid">
+
+          <div class="skill-group reveal">
+            <h3><svg class="h-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-12h-7l1-8z"/></svg> Electronics</h3>
+            <div class="skill"><span>Circuit Assembly</span><div class="bar"><div class="fill" data-level="90"></div></div></div>
+            <div class="skill"><span>Circuit Design</span><div class="bar"><div class="fill" data-level="85"></div></div></div>
+            <div class="skill"><span>Breadboard Prototyping</span><div class="bar"><div class="fill" data-level="90"></div></div></div>
+            <div class="skill"><span>Soldering</span><div class="bar"><div class="fill" data-level="80"></div></div></div>
+            <div class="skill"><span>Troubleshooting &amp; Measurements</span><div class="bar"><div class="fill" data-level="85"></div></div></div>
+            <div class="skill"><span>Analog &amp; Digital Electronics</span><div class="bar"><div class="fill" data-level="85"></div></div></div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3><svg class="h-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg> Programming</h3>
+            <div class="skill"><span>Arduino Programming</span><div class="bar"><div class="fill" data-level="85"></div></div></div>
+            <div class="skill"><span>Basic Python Programming</span><div class="bar"><div class="fill" data-level="70"></div></div></div>
+            <div class="skill"><span>Embedded Logic Development</span><div class="bar"><div class="fill" data-level="75"></div></div></div>
+            <div class="skill"><span>Hardware &amp; Software Integration</span><div class="bar"><div class="fill" data-level="75"></div></div></div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3><svg class="h-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Industrial Technology</h3>
+            <div class="skill"><span>Industrial IoT Fundamentals</span><div class="bar"><div class="fill" data-level="80"></div></div></div>
+            <div class="skill"><span>Smart Manufacturing Concepts</span><div class="bar"><div class="fill" data-level="75"></div></div></div>
+            <div class="skill"><span>Industrial Control Systems</span><div class="bar"><div class="fill" data-level="75"></div></div></div>
+            <div class="skill"><span>Automation Fundamentals</span><div class="bar"><div class="fill" data-level="80"></div></div></div>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3><svg class="h-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> Components, ICs &amp; Tools</h3>
+            <div class="tag-cloud">
+              <span class="tag">NE555 Timer</span><span class="tag">CD4017 Counter</span>
+              <span class="tag">CD4033 Display Driver</span><span class="tag">LEDs</span>
+              <span class="tag">Resistors</span><span class="tag">Capacitors</span>
+              <span class="tag">Sensors</span><span class="tag">Basic Electronic Components</span>
+              <span class="tag">Arduino IDE</span><span class="tag">Multimeter</span>
+              <span class="tag">Breadboard</span><span class="tag">Electronic Schematics</span>
+              <span class="tag">Basic Circuit Analysis</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <p class="section-tag mono reveal">// contact</p>
+        <h2 class="section-title reveal">Let's <span class="accent">Connect</span></h2>
+        <p class="contact-desc reveal">
+          I am always open to discussing electronics projects, embedded systems, Industrial IoT,
+          internships, competitions, collaborations, and learning opportunities. Feel free to reach
+          out if you would like to connect or learn more about my work.
+        </p>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div><h4>Phone</h4><a href="tel:088293092717">0882-9309-2717</a></div></div>
+            <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 5L2 7"/></svg></span><div><h4>Email</h4><a href="mailto:bvnpramudito@gmail.com">bvnpramudito@gmail.com</a></div></div>
+            <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></span><div><h4>GitHub</h4><a href="https://github.com/RockiStriser" target="_blank" rel="noopener">github.com/RockiStriser</a></div></div>
+            <div class="contact-item"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><div><h4>Location</h4><p>Depok, West Java, Indonesia</p></div></div>
+            <a class="btn btn-whatsapp" href="https://wa.me/6288293092717" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+          </div>
+          <form class="contact-form reveal" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What is this about?" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send Message ➤</button>
+            <p class="form-status" id="formStatus" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="mono">⚡ Rahadian Bevan Pramudito — Electronics Engineering Student</p>
+      <div class="footer-links">
+        <a href="https://github.com/RockiStriser" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://wa.me/6288293092717" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:bvnpramudito@gmail.com">Email</a>
+      </div>
+      <p class="footer-copy">© <span id="year"></span> Rahadian Bevan Pramudito · Depok, West Java, Indonesia</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
