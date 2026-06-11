@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Rahadian Bevan Pramudito</title>
+  <meta name="description" content="Curriculum Vitae of Rahadian Bevan Pramudito, Electronics Engineering student at SMK Taruna Bhakti." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --blue: #2563eb; --cyan: #0891b2; --text: #1e293b; --muted: #55677f; --line: #dbe3ee; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: #eef2f7; line-height: 1.55; font-size: 13.5px; }
+    .page { max-width: 800px; margin: 2rem auto; background: #fff; padding: 3rem 3.2rem; box-shadow: 0 10px 40px rgba(30,41,59,.12); border-radius: 10px; }
+    h1, h2 { font-family: 'Space Grotesk', sans-serif; }
+    h1 { font-size: 1.9rem; line-height: 1.15; }
+    .role { color: var(--cyan); font-weight: 600; margin: .2rem 0 .7rem; font-size: .95rem; }
+    .contact-line { color: var(--muted); font-size: .82rem; display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; }
+    .contact-line a { color: var(--blue); text-decoration: none; }
+    h2 { font-size: .92rem; text-transform: uppercase; letter-spacing: .1em; color: var(--blue); border-bottom: 2px solid var(--line); padding-bottom: .3rem; margin: 1.6rem 0 .8rem; }
+    p, li { color: var(--text); }
+    .muted { color: var(--muted); }
+    ul { padding-left: 1.15rem; }
+    li { margin-bottom: .25rem; }
+    .item { margin-bottom: .9rem; }
+    .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+    .item-head h3 { font-size: .95rem; }
+    .item-head span { color: var(--muted); font-size: .8rem; white-space: nowrap; }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .2rem 2rem; }
+    .skills-grid p { font-size: .86rem; margin-bottom: .35rem; }
+    .skills-grid strong { color: var(--blue); }
+    .print-btn { position: fixed; top: 1.2rem; right: 1.2rem; background: linear-gradient(120deg, var(--blue), var(--cyan)); color: #fff; border: none; padding: .7rem 1.4rem; border-radius: 999px; font-weight: 600; font-size: .85rem; cursor: pointer; box-shadow: 0 6px 20px rgba(8,145,178,.35); }
+    .print-btn:hover { filter: brightness(1.08); }
+    @media print {
+      body { background: #fff; font-size: 12px; }
+      .page { box-shadow: none; margin: 0; max-width: none; border-radius: 0; padding: 0.4in 0.5in; }
+      .print-btn { display: none; }
+      a { color: var(--text); }
+      @page { margin: 0.4in; }
+    }
+  </style>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">🖨 Print / Save as PDF</button>
+  <div class="page">
+    <header>
+      <h1>Rahadian Bevan Pramudito</h1>
+      <p class="role">Electronics Engineering Student | Arduino Developer | Industrial IoT Enthusiast</p>
+      <p class="contact-line">
+        <span>📍 Depok, West Java, Indonesia</span>
+        <span>📞 0882-9309-2717</span>
+        <a href="mailto:bvnpramudito@gmail.com">✉ bvnpramudito@gmail.com</a>
+        <a href="https://github.com/RockiStriser">🐙 github.com/RockiStriser</a>
+      </p>
+    </header>
+
+    <h2>Professional Summary</h2>
+    <p>Electronics Engineering student at SMK Taruna Bhakti with a strong interest in electronics, embedded systems, automation, Industrial IoT, and programming. Experienced in building practical electronic systems and integrating hardware with software. Seeking internship opportunities to apply hands-on skills and gain real-world engineering experience.</p>
+
+    <h2>Education</h2>
+    <div class="item">
+      <div class="item-head"><h3>SMK Taruna Bhakti — Electronics Engineering</h3><span>Current</span></div>
+      <p class="muted">Coursework: Analog &amp; Digital Electronics, Electronic Measurements, Circuit Design and Analysis, Industrial Electronics, Microcontrollers, Automation Fundamentals, Troubleshooting and Testing.</p>
+    </div>
+
+    <h2>Certification</h2>
+    <div class="item">
+      <div class="item-head"><h3>Industrial IoT and Control Systems in Manufacturing</h3><span>Feb 21, 2025</span></div>
+      <p class="muted">Cisco Networking Academy, offered by SMK Taruna Bhakti. Covered IIoT architecture, industrial control systems, smart manufacturing, sensor integration, connected devices, data collection &amp; monitoring, and industrial networking fundamentals.</p>
+    </div>
+
+    <h2>Projects</h2>
+    <div class="item">
+      <div class="item-head"><h3>Arduino Temperature &amp; Humidity Monitor (DHT11)</h3></div>
+      <ul>
+        <li>Built an environmental monitor with Arduino Uno, DHT11, and a 16×2 I2C LCD; non-blocking 2 s polling with sensor-error handling.</li>
+        <li>Implemented a high-temperature alarm and CSV serial logging (time, temperature, humidity) for data collection — applying IIoT concepts.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <div class="item-head"><h3>Running LED Circuit — NE555 + CD4017</h3></div>
+      <ul>
+        <li>Designed a 10-LED sequential chaser: NE555 astable clock driving a CD4017 decade counter, with potentiometer-adjustable speed (1–20 Hz).</li>
+        <li>Applied astable timing calculations and current-limiting design for reliable operation.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <div class="item-head"><h3>7-Segment Counter — NE555 + CD4033</h3></div>
+      <ul>
+        <li>Built a 0–9 pulse counter where the CD4033 counts NE555 clock pulses and directly drives a common-cathode 7-segment display, with push-button reset.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <div class="item-head"><h3>Flip-Flop (Bistable) Circuit</h3></div>
+      <ul>
+        <li>Assembled a transistor-based bistable multivibrator demonstrating 1-bit memory; verified set/reset behavior with multimeter testing.</li>
+      </ul>
+    </div>
+
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <p><strong>Electronics:</strong> Circuit design &amp; assembly, breadboard prototyping, soldering, troubleshooting, electronic measurements, analog &amp; digital electronics</p>
+      <p><strong>Programming:</strong> Arduino (C/C++), basic Python, embedded logic development, hardware/software integration</p>
+      <p><strong>Components &amp; ICs:</strong> NE555, CD4017, CD4033, LEDs, sensors (DHT11), passive components</p>
+      <p><strong>Industrial Technology:</strong> Industrial IoT fundamentals, smart manufacturing, industrial control systems, automation fundamentals</p>
+      <p><strong>Tools:</strong> Arduino IDE, multimeter, electronic schematics, basic circuit analysis</p>
+      <p><strong>Languages:</strong> Indonesian (native), English (technical)</p>
+    </div>
+
+    <h2>Career Objective</h2>
+    <p>To become a skilled Electronics and Embedded Systems Engineer capable of developing innovative hardware and software solutions, continuously improving expertise in electronics, Industrial IoT, automation, and programming through projects, internships, and lifelong learning.</p>
+  </div>
+</body>
+</html>

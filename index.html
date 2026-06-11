@@ -59,7 +59,7 @@
         </p>
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="assets/cv.pdf" class="btn btn-outline" download>⬇ Download CV</a>
+          <a href="cv.html" target="_blank" rel="noopener" class="btn btn-outline">⬇ Download CV</a>
         </div>
         <div class="hero-socials">
           <a href="https://github.com/RockiStriser" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
@@ -91,7 +91,7 @@
     <section class="stats" id="stats">
       <div class="container stats-grid reveal">
         <div class="stat-card">
-          <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
+          <span class="stat-number" data-count="4">0</span><span class="stat-plus">+</span>
           <p>Electronics Projects Completed</p>
         </div>
         <div class="stat-card">
@@ -232,7 +232,10 @@
         <div class="projects-grid">
 
           <article class="project-card reveal">
-            <div class="project-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="5" y="5" width="14" height="14" rx="2.5"/><rect x="9" y="9" width="6" height="6" rx="1.2"/><path class="icon-pins" d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
+            <div class="project-media">
+              <img src="assets/projects/running-led.jpg" alt="Breadboard photo of the running LED circuit with NE555 and CD4017" loading="lazy" onerror="this.remove();" />
+              <div class="project-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="5" y="5" width="14" height="14" rx="2.5"/><rect x="9" y="9" width="6" height="6" rx="1.2"/><path class="icon-pins" d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
+            </div>
             <div class="project-body">
               <h3>Running LED Circuit Using NE555 and CD4017</h3>
               <p>Designed and assembled a running LED system using an NE555 Timer IC and CD4017 Decade Counter IC.</p>
@@ -240,24 +243,57 @@
                 <span class="tag">NE555</span><span class="tag">CD4017</span>
                 <span class="tag">LEDs</span><span class="tag">Breadboard Prototyping</span>
               </div>
+              <details class="project-details">
+                <summary>Full project breakdown</summary>
+                <div class="details-content">
+                  <p><strong>Objective:</strong> Build a sequential "chaser" light effect driven entirely by hardware logic, with adjustable speed.</p>
+                  <p><strong>How it works:</strong> The NE555 runs in astable mode as a clock generator. Each pulse advances the CD4017 decade counter, which activates its 10 outputs one at a time, lighting the LEDs in sequence. A potentiometer in the RC timing network changes the clock frequency and therefore the chase speed.</p>
+                  <p><strong>Components:</strong> NE555, CD4017, 10× LEDs, 10× 330Ω resistors, 10kΩ potentiometer, 10µF capacitor, breadboard, 9V supply.</p>
+                  <p><strong>Result &amp; learnings:</strong> Working chaser at 1–20 Hz. Learned astable timing calculations (f ≈ 1.44/((R1+2R2)C)), counter reset wiring, and current-limiting LED design.</p>
+                </div>
+              </details>
+              <div class="project-links">
+                <a href="https://gitlab.com/roki-lab-group/Roki-Lab-project/-/tree/main/projects/running-led-ne555-cd4017" target="_blank" rel="noopener">&lt;/&gt; Docs &amp; Build Guide</a>
+                <a href="https://github.com/RockiStriser" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
               <p class="project-skills mono">Pulse Generation · Timing Circuits · Digital Counting · Sequential Logic</p>
             </div>
           </article>
 
           <article class="project-card reveal">
-            <div class="project-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="7" width="20" height="10" rx="5"/><circle class="icon-knob" cx="16" cy="12" r="3"/></svg></div>
+            <div class="project-media">
+              <img src="assets/projects/dht11-monitor.jpg" alt="Arduino Uno with DHT11 sensor and LCD showing temperature and humidity" loading="lazy" onerror="this.remove();" />
+              <div class="project-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V5a2 2 0 1 0-4 0v9.76a4 4 0 1 0 4 0z"/><circle cx="12" cy="18" r="1.6"/></svg></div>
+            </div>
             <div class="project-body">
-              <h3>Flip-Flop Circuit</h3>
-              <p>Built and tested a flip-flop circuit to understand memory and switching logic principles in digital electronics.</p>
+              <h3>Arduino Temperature &amp; Humidity Monitor (DHT11)</h3>
+              <p>Built an environmental monitor with an Arduino Uno, DHT11 sensor, and 16×2 I2C LCD, with serial data logging and a high-temperature alarm — a first step toward Industrial IoT sensing.</p>
               <div class="project-tags">
-                <span class="tag">Digital Logic</span><span class="tag">Bistable Circuits</span>
+                <span class="tag">Arduino Uno</span><span class="tag">DHT11</span>
+                <span class="tag">16×2 I2C LCD</span><span class="tag">Arduino IDE</span>
               </div>
-              <p class="project-skills mono">Digital Logic · Bistable Circuits · Signal Switching · Logic Analysis</p>
+              <details class="project-details">
+                <summary>Full project breakdown</summary>
+                <div class="details-content">
+                  <p><strong>Objective:</strong> Read real-world sensor data, display it locally, and log it in a machine-readable format — the core loop of any IIoT node.</p>
+                  <p><strong>How it works:</strong> The sketch polls the DHT11 every 2 seconds (non-blocking, using millis()), shows temperature and humidity on the LCD, drives an alarm LED above 35°C, and streams CSV (time, temp, humidity) over serial for plotting or ingestion.</p>
+                  <p><strong>Components:</strong> Arduino Uno, DHT11 module, 16×2 LCD with I2C backpack, LED + 330Ω resistor, jumper wires, breadboard.</p>
+                  <p><strong>Result &amp; learnings:</strong> Stable readings with sensor-error handling. Learned library integration (DHT, LiquidCrystal_I2C), non-blocking timing, I2C wiring, and structuring data for collection — directly applying my IIoT certification topics.</p>
+                </div>
+              </details>
+              <div class="project-links">
+                <a href="https://gitlab.com/roki-lab-group/Roki-Lab-project/-/tree/main/projects/arduino-dht11-monitor" target="_blank" rel="noopener">&lt;/&gt; Source Code (.ino)</a>
+                <a href="https://github.com/RockiStriser" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+              <p class="project-skills mono">Sensor Integration · Embedded C++ · I2C Communication · Data Logging</p>
             </div>
           </article>
 
           <article class="project-card reveal">
-            <div class="project-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><path class="icon-segments" d="M9.5 7h5M9.5 12h5M9.5 17h5M9.5 7.5v9M14.5 7.5v9"/></svg></div>
+            <div class="project-media">
+              <img src="assets/projects/7segment-counter.jpg" alt="7-segment display counter circuit with NE555 and CD4033" loading="lazy" onerror="this.remove();" />
+              <div class="project-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><path class="icon-segments" d="M9.5 7h5M9.5 12h5M9.5 17h5M9.5 7.5v9M14.5 7.5v9"/></svg></div>
+            </div>
             <div class="project-body">
               <h3>7-Segment Counter Using NE555 and CD4033</h3>
               <p>Developed a digital counter displayed on a 7-segment display using an NE555 Timer IC and CD4033 Counter/Display Driver.</p>
@@ -265,7 +301,48 @@
                 <span class="tag">NE555</span><span class="tag">CD4033</span>
                 <span class="tag">7-Segment Display</span>
               </div>
+              <details class="project-details">
+                <summary>Full project breakdown</summary>
+                <div class="details-content">
+                  <p><strong>Objective:</strong> Count clock pulses 0–9 and drive a numeric display without a microcontroller.</p>
+                  <p><strong>How it works:</strong> The NE555 generates clean clock pulses; the CD4033 counts them and directly decodes to 7-segment outputs (a–g), so each pulse increments the digit shown on a common-cathode display.</p>
+                  <p><strong>Components:</strong> NE555, CD4033, common-cathode 7-segment display, 7× 220Ω segment resistors, timing RC network, push-button reset, breadboard.</p>
+                  <p><strong>Result &amp; learnings:</strong> Reliable 0–9 counting with reset. Learned display multiplexing concepts, segment current limiting, debouncing, and the counter/decoder architecture used in industrial displays.</p>
+                </div>
+              </details>
+              <div class="project-links">
+                <a href="https://gitlab.com/roki-lab-group/Roki-Lab-project/-/tree/main/projects/7segment-counter-ne555-cd4033" target="_blank" rel="noopener">&lt;/&gt; Docs &amp; Build Guide</a>
+                <a href="https://github.com/RockiStriser" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
               <p class="project-skills mono">Digital Counting · Display Interfacing · Clock Pulse Generation · Numerical Display Systems</p>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-media">
+              <img src="assets/projects/flip-flop.jpg" alt="Flip-flop circuit built on a breadboard" loading="lazy" onerror="this.remove();" />
+              <div class="project-thumb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="7" width="20" height="10" rx="5"/><circle class="icon-knob" cx="16" cy="12" r="3"/></svg></div>
+            </div>
+            <div class="project-body">
+              <h3>Flip-Flop Circuit</h3>
+              <p>Built and tested a flip-flop circuit to understand memory and switching logic principles in digital electronics.</p>
+              <div class="project-tags">
+                <span class="tag">Digital Logic</span><span class="tag">Bistable Circuits</span>
+              </div>
+              <details class="project-details">
+                <summary>Full project breakdown</summary>
+                <div class="details-content">
+                  <p><strong>Objective:</strong> Demonstrate how a circuit can store one bit of state — the foundation of registers and memory.</p>
+                  <p><strong>How it works:</strong> Two cross-coupled transistor stages form a bistable multivibrator: only one side conducts at a time, and a button press flips the stable state, toggling the indicator LEDs.</p>
+                  <p><strong>Components:</strong> 2× NPN transistors (BC547), 2× LEDs, resistors, capacitors, push-buttons, breadboard.</p>
+                  <p><strong>Result &amp; learnings:</strong> Verified set/reset behavior with a multimeter and LEDs. Learned bistable operation, transistor switching regions, and how SR latches relate to real memory elements.</p>
+                </div>
+              </details>
+              <div class="project-links">
+                <a href="https://gitlab.com/roki-lab-group/Roki-Lab-project/-/tree/main/projects/flip-flop-circuit" target="_blank" rel="noopener">&lt;/&gt; Docs &amp; Build Guide</a>
+                <a href="https://github.com/RockiStriser" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+              <p class="project-skills mono">Digital Logic · Bistable Circuits · Signal Switching · Logic Analysis</p>
             </div>
           </article>
 
