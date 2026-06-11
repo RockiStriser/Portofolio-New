@@ -81,16 +81,15 @@
 
 /* ===================== Scroll Reveal ===================== */
 (function initReveal() {
+  // Bidirectional: elements fade in when entering the viewport and
+  // fade out when leaving, in both scroll directions.
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+        entry.target.classList.toggle('visible', entry.isIntersecting);
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.12, rootMargin: '0px 0px -4% 0px' }
   );
   document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 })();
@@ -244,7 +243,7 @@
 (function initSpotlight() {
   if (window.matchMedia('(hover: none)').matches) return;
   const selector =
-    '.project-card, .stat-card, .skill-group, .cert-card, .timeline-card, .contact-form, .objective-card, .interests';
+    '.project-card, .stat-card, .skill-group, .cert-card, .timeline-card, .contact-form, .objective-card, .interests, .lesson-card, .strengths-card';
   document.querySelectorAll(selector).forEach((card) => {
     const spot = document.createElement('span');
     spot.className = 'spotlight';
@@ -253,6 +252,79 @@
       const r = card.getBoundingClientRect();
       spot.style.setProperty('--mx', e.clientX - r.left + 'px');
       spot.style.setProperty('--my', e.clientY - r.top + 'px');
+    });
+  });
+})();
+
+/* ===================== Smooth Accordion for Project Breakdowns ===================== */
+(function initDetailsAnimation() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
+
+  document.querySelectorAll('.project-details').forEach((details) => {
+    const summary = details.querySelector('summary');
+    const content = details.querySelector('.details-content');
+    let animation = null;
+    let isClosing = false;
+    let isExpanding = false;
+
+    function finish(open) {
+      details.open = open;
+      animation = null;
+      isClosing = false;
+      isExpanding = false;
+      details.style.height = '';
+      details.style.overflow = '';
+    }
+
+    function collapse() {
+      isClosing = true;
+      const startHeight = details.offsetHeight + 'px';
+      const endHeight = summary.offsetHeight + 2 + 'px'; // + border
+      if (animation) animation.cancel();
+      content.style.opacity = '0';
+      animation = details.animate(
+        { height: [startHeight, endHeight] },
+        { duration: 320, easing: EASE }
+      );
+      animation.onfinish = () => {
+        finish(false);
+        content.style.opacity = '';
+      };
+      animation.oncancel = () => { isClosing = false; };
+    }
+
+    function expand() {
+      isExpanding = true;
+      const startHeight = details.offsetHeight + 'px';
+      const endHeight = summary.offsetHeight + content.offsetHeight + 2 + 'px';
+      if (animation) animation.cancel();
+      animation = details.animate(
+        { height: [startHeight, endHeight] },
+        { duration: 420, easing: EASE }
+      );
+      content.animate(
+        { opacity: [0, 1], transform: ['translateY(-6px)', 'translateY(0)'] },
+        { duration: 420, delay: 80, fill: 'backwards', easing: EASE }
+      );
+      animation.onfinish = () => finish(true);
+      animation.oncancel = () => { isExpanding = false; };
+    }
+
+    function openDetails() {
+      details.style.height = details.offsetHeight + 'px';
+      details.open = true;
+      requestAnimationFrame(expand);
+    }
+
+    summary.addEventListener('click', (e) => {
+      e.preventDefault();
+      details.style.overflow = 'hidden';
+      if (isClosing || !details.open) {
+        openDetails();
+      } else if (isExpanding || details.open) {
+        collapse();
+      }
     });
   });
 })();
